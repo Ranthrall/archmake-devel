@@ -89,6 +89,6 @@ mknod -m 600 $DEV/initctl p
 mknod -m 666 $DEV/ptmx c 5 2
 ln -sf /proc/self/fd $DEV/fd
 
-tar --numeric-owner --xattrs --acls -C $ROOTFS -c . | docker import - archlinux
-docker run -t archlinux echo Success.
+tar --numeric-owner --xattrs --acls -C $ROOTFS -c . | docker import - acidhub/archmake:base-devel
+docker run -t acidhub/archmake:base-devel echo Success.
 rm -rf $ROOTFS
