@@ -1,10 +1,10 @@
-FROM acidhub/archmake:base
+FROM base/archlinux
 
 MAINTAINER Acidhub - acidhub@craft.net.br
 
 LABEL Description="Acidhub's docker image for builds testing"
 LABEL Vendor="Acidhub - acidhub@craft.net.br"
-LABEL Version="2.4"
+LABEL Version="2.4.1"
 
 RUN sed -i 's/Required/Never/g' /etc/pacman.conf && \
     pacman -Syyu --noconfirm --ignore filesystem --ignore systemd && \
