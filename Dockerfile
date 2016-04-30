@@ -7,7 +7,7 @@ LABEL Vendor="Acidhub - contact@acidhub.click"
 LABEL Version="2.4.2"
 
 RUN sed -i 's/Required/Never/g' /etc/pacman.conf && \
-    pacman -Syyu --noconfirm --ignore systemd && \
+    pacman -Syyu --noconfirm --force --ignore systemd && \
     pacman-db-upgrade && \
     pacman -S base-devel git curl --noconfirm && \
     pacman -Rcns systemd --noconfirm && \
